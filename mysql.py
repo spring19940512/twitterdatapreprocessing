@@ -20,6 +20,6 @@ cursor.execute("SELECT VERSION()")
 data = cursor.fetchone()
 
 print "Database version : %s " % data
-
+print "1"
 # 关闭数据库连接
 db.close()
