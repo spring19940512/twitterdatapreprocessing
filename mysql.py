@@ -7,7 +7,8 @@
 
 import MySQLdb
 myhost = "107.191.118.80"
-myuser = "root"
+#myhost = "127.0.0.1"
+myuser = "spring"
 mypw = "123456"
 OperationalError = MySQLdb.OperationalError
 

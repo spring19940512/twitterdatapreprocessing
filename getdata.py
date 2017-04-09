@@ -7,8 +7,17 @@
 
 import os
 from mysql import MySQL
- 
 conn = MySQL()
 conn.selectDb('twitter3')
-sql="select * from status"
-conn=conn.query(sql)
+sql_status="select distinct * from status"
+results=conn.query(sql_status)
+print results
+res_stauts=conn.fetchAll()
+for row in res_stauts:
+    status_id = row['status_id']
+    user_id = row['user_id']
+    print user_id
+    sql_follower="select * from follower where user_id='%s'"%(user_id)
+    follower_num=conn.query(sql_follower)
+    print follower_num
+    #print status_id
