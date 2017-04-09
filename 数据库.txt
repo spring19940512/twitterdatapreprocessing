@@ -1,0 +1,43 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date    : 2017-04-09 21:34:12
+# @Author  : Quanquan Chu (spring_sjtu@foxmail.com)
+# @Link    : ${link}
+# @Version : $Id$
+
+
+#创新系数 用户的相关信息  
+CREATE TABLE Innovator (
+    user_id varchar(128) COMMENT '用户的id',
+    status_id varchar(128) NOT NULL COMMENT 'twitter的id',
+    following BIGINT DEFAULT 0 COMMENT '关注的用户数目', 
+    follower BIGINT DEFAULT 0 COMMENT '粉丝数目', 
+    friends BIGINT DEFAULT 0 COMMENT '好友数目', 
+    twitter BIGINT DEFAULT 0 COMMENT '发的twitter的数目',
+    favorite BIGINT DEFAULT 0 COMMENT '收获的点赞数目',        
+    PRIMARY KEY (status_id)
+);
+
+
+#模仿系数 twitter的相关信息
+CREATE TABLE Imitator (
+    status_id varchar(128) NOT NULL COMMENT 'twitter的id',
+    create_time varchar(128) DEFAULT 0 COMMENT '发信息的时间戳', 
+    URL BIGINT DEFAULT 0 COMMENT 'twitter中URL数目', 
+    pic BIGINT DEFAULT 0 COMMENT 'twitter中图片数目',
+    vedio BIGINT DEFAULT 0 COMMENT 'twitter中视频数目',
+    character BIGINT DEFAULT 0 COMMENT 'twitter的字符数',         
+    PRIMARY KEY (status_id)
+);
+
+#Popularity的衡量
+CREATE TABLE Popularity (
+    status_id varchar(128) NOT NULL COMMENT 'twitter的id',
+    favorite varchar(128) DEFAULT 0 COMMENT '发信息的时间戳', 
+    favorite BIGINT DEFAULT 0 COMMENT 'twitter收获得点赞数', 
+    retweet BIGINT DEFAULT 0 COMMENT 'twitter收获得转发数',
+    tcommemt BIGINT DEFAULT 0 COMMENT 'twitter收获得评论数',
+    bpopularity BIGINT DEFAULT 0 COMMENT '标准Popularity', 
+    cpopularity BIGINT DEFAULT 0 COMMENT '算法计算的Popularity',     
+    PRIMARY KEY (status_id)
+);
