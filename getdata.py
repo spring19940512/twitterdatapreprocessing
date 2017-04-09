@@ -9,6 +9,10 @@ import os
 from mysql import MySQL
 conn = MySQL()
 conn.selectDb('twitter3')
+myhost = "107.191.118.80"
+#myhost = "127.0.0.1"
+myuser = "spring"
+mypw = "123456"
 sql_status="select distinct * from status"
 results=conn.query(sql_status)
 print results
