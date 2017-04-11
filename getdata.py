@@ -17,11 +17,14 @@ sql_status="select distinct * from status"
 results=conn.query(sql_status)
 print results
 res_stauts=conn.fetchAll()
+follower_num1=0
 for row in res_stauts:
     status_id = row['status_id']
     user_id = row['user_id']
     print user_id
-    sql_follower="select * from follower where user_id='%s'"%(user_id)
+    sql_follower="select * from follower where follower_id='%s'"%(user_id)
+    print sql_follower
     follower_num=conn.query(sql_follower)
-    print follower_num
+    follower_num1=follower_num1+follower_num
+    print follower_num1
     #print status_id

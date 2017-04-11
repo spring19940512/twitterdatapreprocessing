@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Date    : 2017-04-09 21:34:12
 # @Author  : Quanquan Chu (spring_sjtu@foxmail.com)
@@ -26,14 +26,13 @@ CREATE TABLE Imitator (
     URL BIGINT DEFAULT 0 COMMENT 'twitter中URL数目', 
     pic BIGINT DEFAULT 0 COMMENT 'twitter中图片数目',
     vedio BIGINT DEFAULT 0 COMMENT 'twitter中视频数目',
-    character BIGINT DEFAULT 0 COMMENT 'twitter的字符数',         
+    characters BIGINT DEFAULT 0 COMMENT 'twitter的字符数',         
     PRIMARY KEY (status_id)
 );
 
 #Popularity的衡量
 CREATE TABLE Popularity (
-    status_id varchar(128) NOT NULL COMMENT 'twitter的id',
-    favorite varchar(128) DEFAULT 0 COMMENT '发信息的时间戳', 
+    status_id varchar(128) NOT NULL COMMENT 'twitter的id', 
     favorite BIGINT DEFAULT 0 COMMENT 'twitter收获得点赞数', 
     retweet BIGINT DEFAULT 0 COMMENT 'twitter收获得转发数',
     tcommemt BIGINT DEFAULT 0 COMMENT 'twitter收获得评论数',
